@@ -1,0 +1,13 @@
+// 1.
+let personName: string = "Eric";
+let message: string = `Hello ${personName}, would you like to learn some Python today?`;
+
+console.log(message);
+
+// 2.
+const transportationArray: string[] = ["car", "motorcycle", "bicycle", "bus"];
+
+
+for (const transportation of transportationArray) {
+    console.log(`I would like to own a ${transportation}.`);
+}
