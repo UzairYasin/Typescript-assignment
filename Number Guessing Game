@@ -1,0 +1,38 @@
+Guess Game
+
+import inquirer from "inquirer";
+
+function randomInt(min: number, max: number): number {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
+
+    let num: number = randomInt(1, 10);
+    let guessedNumber: number | undefined;
+    let guess;
+    let score:number = 100;
+
+    do {
+        let guess = await inquirer.prompt([
+            {
+                type: 'number',
+                name: 'guessed',
+                message: 'Guess a Number Between 1 & 10 :'
+            }
+        ]);
+
+        guessedNumber = guess.guessed;
+        if (guessedNumber !== num) {
+            console.log('Wrong Guess! Try Again.');
+            score -= 5 ;
+        }
+    } while (guessedNumber !== num);
+
+    console.log(`Congratulation, Correct Guess.\n Your score is : ${score}`);
+// }
+
+
+// guessGame();
