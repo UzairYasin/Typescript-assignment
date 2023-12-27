@@ -1,4 +1,5 @@
 Calculator Assignment
+
 import inquirer from "inquirer";
 
 let guess = await inquirer.prompt([
